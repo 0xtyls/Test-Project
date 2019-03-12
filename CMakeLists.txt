@@ -1,4 +1,4 @@
-cmake_minumum_required(VERSION 2.6)
+cmake_minumum_required(VERSION 3.10)
 
 project(helloworld)
 
