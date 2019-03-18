@@ -1,0 +1,4 @@
+language: C++
+compiler: gcc
+script: 
+- cmake -G "Unix Makefiles" ../ && make
