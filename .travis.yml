@@ -1,6 +1,19 @@
 language: C++
 compiler: gcc
-script: 
-- pwd && ls
-- mkdir build
-- cd build && cmake -G "Unix Makefiles" ../ && make
+#script: 
+#- pwd && ls
+#- mkdir build
+#- cd build && cmake -G "Unix Makefiles" ../ && make
+
+jobs:
+  include:
+    - stage: "PWD"
+      name: "PWD TEST"
+      script: 
+      - pwd
+      - ls
+    - script: echo "hello"
+    - stage: "BUILD"
+      script:
+      - mkdir build
+      - cd build && cmake -G "Unix Makefiles" ../ && make
