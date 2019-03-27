@@ -3,7 +3,7 @@ workflows:
   version: 2
   build_and_test: # name of your workflow
     jobs:
-      - build1
+      - build1:
         docker:
         - image: circleci/ruby:2.4-node
         - image: circleci/postgres:9.4.12-alpine
