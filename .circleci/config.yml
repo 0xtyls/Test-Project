@@ -19,10 +19,10 @@ workflows:
         - image: circleci/postgres:9.4.12-alpine
         steps:
         - restore_cache: # Restores the cached dependency.
-              key: v1-repo-{{ .Environment.CIRCLE_SHA1 }}
-          - run:
-              name: Running tests
-              command: make test
+            key: v1-repo-{{ .Environment.CIRCLE_SHA1 }}
+        - run:
+            name: Running tests
+            command: make test
         requires:
            - build1 # wait for build1 job to complete successfully before starting
            # see circleci.com/docs/2.0/workflows/ for more examples.
