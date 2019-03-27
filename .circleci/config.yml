@@ -20,9 +20,12 @@ jobs:
     steps:
       - sayhello:
           to: "Lev"
+      - hello/hello-triggerer:
+          to: "Leo"
 
 workflows:
   "Hello Workflow": 
     jobs:
       - hellojob
       - hello/hello-build
+      
