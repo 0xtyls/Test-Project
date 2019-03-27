@@ -1,5 +1,8 @@
 version: 2.1
 
+orbs:
+  hello: circleci/hello-build@0.0.10
+
 commands:
   sayhello:
     description: "hello world"
@@ -11,9 +14,15 @@ commands:
       - run: echo <<parameters.to>>
       
 jobs:
-  myjob:
+  hellojob:
     docker:
       - image: "circleci/node:9.6.1"
     steps:
       - sayhello:
           to: "Lev"
+
+workflows:
+  "Hello Workflow": 
+    jobs:
+      - hellojob
+      - hello/hello-build
